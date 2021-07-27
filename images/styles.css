@@ -1,0 +1,65 @@
+/* import url for font here: */
+
+* {
+    /* general sizing. */
+    /* This makes the sizing of our elements determined by border-box */
+    /* Otherwise, padding would be added to defined padding */
+    /* width takes into account the padding. */
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+    /* Change this font when you import url */
+}
+
+html, body {
+    /* clears margin */
+    margin: 0;
+    padding: 0;
+}
+
+.nav ul {
+    /* This clears the top margin because <ul> takes space and there would */
+    /* be white space without this */
+    margin: 0;
+
+}
+
+.nav li {
+    display: inline;
+}
+
+.nav a {
+    /* inline el can't ctrl padding on top */
+    /* inline-block allows height+padding to el */
+    display: inline-block;
+    padding: .5em;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: white;    
+}
+
+.main-nav {
+    text-align: left;
+    font-weight: lighter;
+}
+
+.header {
+    background-color: white;
+    /* background-size: cover (cuts off image) to grow and shrink */
+}
+
+.list { 
+    margin-left: 50px;
+    width: 700px;
+}
+
+.list ol li {
+    padding-top: 25px;
+}
+
+.btn {
+    float: right;
+    margin-right: 220px;
+}
+/* Javascript */
