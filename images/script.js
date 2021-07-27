@@ -1,10 +1,8 @@
-const answers = document.getElementById('questions');
 
-form.addEventListener('Submit', e => {
-    e.preventDefault();
-    checkInputs();
-})
+object.addEventListener('btn', checkAnswers())
 
-function checkInputs() {
-
+function checkAnswers() {
+    var str = 'Hello World'
+    var result = str.fontcolor('red')
+    document.getElementById('tf-display').innerHTML = result
 }

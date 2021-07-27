@@ -44,22 +44,34 @@ html, body {
     font-weight: lighter;
 }
 
-.header {
-    background-color: white;
-    /* background-size: cover (cuts off image) to grow and shrink */
+.nav {
+    background-color: rgb(184, 179, 179);
+    padding: 17px;
 }
-
-.list { 
-    margin-left: 50px;
-    width: 700px;
-}
-
-.list ol li {
-    padding-top: 25px;
+.answer_positioning {
+    display: inline-block;
+    font-weight: normal;
+    padding-left: 0.3125rem;
+    position: relative;
+    vertical-align: top;
+    max-width: 50.625rem;
+    font-size: 1.2rem;
 }
 
 .btn {
     float: right;
-    margin-right: 220px;
 }
-/* Javascript */
+
+#tf-display {
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
