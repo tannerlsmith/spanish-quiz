@@ -55,6 +55,18 @@ hr {
     min-height: 400px;
     clear: both;
     background-color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-left: 2.5px solid #444;
+    border-right: 2.5px solid #444;
+}
+
+.text-input {
+    display: inline-block;
+}
+
+#submit-quiz-button {
+    margin-left: 265px;
 }
 
 .main-nav-bar ul {
@@ -64,4 +76,38 @@ hr {
 .main-nav-bar li {
     padding-top: 5px;
     list-style-type: none;
+}
+
+.copy-paste {
+    margin-left: 18px;
+}
+
+.word-bank {
+    display: inline;
+}
+
+.copy-paste {
+    display: inline-block;
+}
+
+#invis {
+    border-color: white;
+}
+
+.text-box {
+    padding-top: 20px;
+}
+
+.enter-essay {
+    width: 500px;
+    height: 150px;
+}
+
+.essay-header {
+    padding-bottom: 10px;
+}
+
+.enter-essay-button {
+    margin-left: 445px;
+    margin-bottom: 20px;
 }
