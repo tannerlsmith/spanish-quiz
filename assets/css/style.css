@@ -3,7 +3,7 @@
   }
 
 body {
-    background: #cec9c9;
+    background: #E0E0E0;
     color: var(--grey);
     margin: 0;
     padding: 0;
@@ -18,6 +18,12 @@ body {
 .black-nav-bar {
     background-color: black;
     padding: 17px;
+}
+
+.black-footer-bar {
+    background-color: black;
+    margin-bottom: 0;
+    padding: 20px;
 }
 
 .black-nav-bar ul {
@@ -65,10 +71,6 @@ hr {
     display: inline-block;
 }
 
-#submit-quiz-button {
-    margin-left: 265px;
-}
-
 .main-nav-bar ul {
     margin: 1em;
 }
@@ -76,6 +78,18 @@ hr {
 .main-nav-bar li {
     padding-top: 5px;
     list-style-type: none;
+}
+
+.exam-sheet {
+    margin-bottom: 300px;
+}
+
+.exam-sheet ol {
+    height: 300px;
+}
+
+.exam-sheet li {
+    margin: 1em;
 }
 
 .copy-paste {
@@ -110,4 +124,15 @@ hr {
 .enter-essay-button {
     margin-left: 445px;
     margin-bottom: 20px;
+}
+
+.footer {
+    float: right;
+    margin-bottom: 7px;
+    margin-right: 0px;
+    color: white;
+}
+
+.hide {
+    display: none;
 }
