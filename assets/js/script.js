@@ -2,9 +2,11 @@
 const timerEl = document.getElementById('timer')
 var beginButtonEl = document.querySelector('#start-btn')
 var questionSection = document.querySelector('.exam-sheet')
-var timeLeft = 10;
+var timeLeft = 20;
 var timerId;
 var index = 0;
+var subtTime = 2;
+var points = 0;
 
 var questionsLink = [
     {
@@ -37,12 +39,6 @@ var questionsLink = [
         ],
         answers: 'choice 4'
     },
-    {
-        question: 'Test Complete',
-        choices: [
-            'View Grade'
-        ]
-    }
 ]
 
 // Check answer variables
@@ -93,12 +89,48 @@ function showNextQuestion(index) {
     questionSection.appendChild(buttonFour)
 }
 
+// Needs to be updated to add grade to localStoarge
 function checkAnswer() {
     console.log(this.innerHTML)
     if (this.innerHTML === questionsLink[index].answers) {
-        console.log('correct')
-    } else {console.log('incorrect')} 
+        // add points
+        points++; 
 
-    index++
-    showNextQuestion(index)
+    } else {timeLeft = timeLeft - 2}
+
+    if (index + 1 === questionsLink.length) {
+        clearInterval(timerId)
+        endQuiz()
+    } else {
+        index++
+        showNextQuestion(index)
+    }
 }
+
+function endQuiz() {
+    questionSection.style.display = 'none'
+
+    var showEndQuiz = document.querySelector('.end-quiz');
+    showEndQuiz.style.display = 'block' 
+
+    var showScore = document.getElementById('show-score')
+    showScore.innerText = 'This is your grade: ' + points + '/3'
+
+    var localStorageButton = document.getElementById('enter-highscores')
+    localStorageButton.addEventListener('click', function() {
+        var saveInitials = document.getElementById('save-initials').value;
+        console.log(saveInitials)
+
+        // clearForm
+        // add it to local storage
+        
+    })
+}
+
+localStorage.setItem('Hello', 5)
+
+var answer = localStorage.getItem('Hello')
+console.log(answer)
+
+// How to save the initials + user score.
+// How to save an array of objects with inital & score

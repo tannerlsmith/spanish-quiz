@@ -80,52 +80,6 @@ hr {
     list-style-type: none;
 }
 
-.exam-sheet {
-    margin-bottom: 300px;
-}
-
-.exam-sheet ol {
-    height: 300px;
-}
-
-.exam-sheet li {
-    margin: 1em;
-}
-
-.copy-paste {
-    margin-left: 18px;
-}
-
-.word-bank {
-    display: inline;
-}
-
-.copy-paste {
-    display: inline-block;
-}
-
-#invis {
-    border-color: white;
-}
-
-.text-box {
-    padding-top: 20px;
-}
-
-.enter-essay {
-    width: 500px;
-    height: 150px;
-}
-
-.essay-header {
-    padding-bottom: 10px;
-}
-
-.enter-essay-button {
-    margin-left: 445px;
-    margin-bottom: 20px;
-}
-
 .footer {
     float: right;
     margin-bottom: 7px;
@@ -134,5 +88,9 @@ hr {
 }
 
 .hide {
+    display: none;
+}
+
+.end-quiz {
     display: none;
 }
