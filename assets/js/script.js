@@ -2,13 +2,21 @@
 const timerEl = document.getElementById('timer')
 var beginButtonEl = document.querySelector('#start-btn')
 var questionSection = document.querySelector('.exam-sheet')
+var localStorageButton = document.getElementById('enter-highscores')
 var timeLeft = 20;
 var timerId;
 var index = 0;
 var subtTime = 2;
 var points = 0;
+var highScoreArray;
+
+if (localStorage.getItem('form') === null) {
+    highScoreArray = [] 
+} else {
+    highScoreArray = JSON.parse(localStorage.getItem('form'))
+}
+
 // do i need this one VVVV
-var inputForm = '';
 
 var questionsLink = [
     {
@@ -56,7 +64,11 @@ function countdown() {
     }
 }
 
+// Starts here
 beginButtonEl.addEventListener('click', function() {
+    beginButtonEl.classList.add('hide')
+    document.getElementById('timer').classList.remove('hide');
+    questionSection.style.display = 'block';
     timerEl.innerText = "Time Remaining: " + timeLeft;
     // set the timer, calls the countdown and runs it every second. 
     timerId = setInterval(countdown, 1000)
@@ -111,26 +123,39 @@ function checkAnswer() {
 
 function endQuiz() {
     questionSection.style.display = 'none'
-
     var showEndQuiz = document.querySelector('.end-quiz');
     showEndQuiz.style.display = 'block' 
 
     var showScore = document.getElementById('show-score')
     showScore.innerText = 'This is your grade: ' + points + '/3'
 
-    var localStorageButton = document.getElementById('enter-highscores')
-    localStorageButton.addEventListener('click', function() {
-        var saveInitials = document.getElementById('save-initials').value;
-        console.log(saveInitials)
-        document.getElementById('form').reset();
-        // add it to local storage
-        enterInitials()
-        
-    })
+    localStorageButton.style.display = 'inline'
+    
+    document.getElementById('restart-button').addEventListener('click', restart)
 }
 
-function enterInitials() {
-    localStorage.setItem('form', value)
+localStorageButton.addEventListener('click', function() {
+    var saveInitials = document.getElementById('save-initials');
+
+    console.log(saveInitials)
+    highScoreArray.push({
+        initials: saveInitials.value, 
+        points: points
+    })
+    console.log(highScoreArray)
+    localStorage.setItem('form', JSON.stringify(highScoreArray))
+    localStorageButton.style.display = 'none'
+    saveInitials.value = ''
+})
+
+function restart() {
+    timeLeft = 20;
+    index = 0; 
+    points = 0;
+    document.getElementById('save-initials').value = ''
+    document.getElementById('timer').classList.add('hide')
+    document.querySelector('.end-quiz').style.display = 'none';
+    beginButtonEl.classList.remove('hide')
 }
 
 
@@ -140,3 +165,5 @@ function enterInitials() {
 // How to save an array of objects with inital & score
 
 // if timeleft = 0, endgame.
+
+// retake quiz
