@@ -7,6 +7,8 @@ var timerId;
 var index = 0;
 var subtTime = 2;
 var points = 0;
+// do i need this one VVVV
+var inputForm = '';
 
 var questionsLink = [
     {
@@ -120,17 +122,21 @@ function endQuiz() {
     localStorageButton.addEventListener('click', function() {
         var saveInitials = document.getElementById('save-initials').value;
         console.log(saveInitials)
-
-        // clearForm
+        document.getElementById('form').reset();
         // add it to local storage
+        enterInitials()
         
     })
 }
 
-localStorage.setItem('Hello', 5)
+function enterInitials() {
+    localStorage.setItem('form', value)
+}
 
-var answer = localStorage.getItem('Hello')
-console.log(answer)
+
+
 
 // How to save the initials + user score.
 // How to save an array of objects with inital & score
+
+// if timeleft = 0, endgame.
