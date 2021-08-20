@@ -16,36 +16,34 @@ if (localStorage.getItem('form') === null) {
     highScoreArray = JSON.parse(localStorage.getItem('form'))
 }
 
-// do i need this one VVVV
-
 var questionsLink = [
     {
-        question: 'question1',
+        question: 'Question',
         choices: [
-            'choice 1', 
-            'choice 2',
-            'choice 3', 
-            'choice 4'
+            'false', 
+            'true',
+            'false', 
+            'false'
         ],
-        answers: 'choice 2'
+        answers: 'true'
     },
     {
         question: 'question2',
         choices: [
-            'choice 1',
-            'choice 2',
-            'choice 3', 
-            'choice 4'
+            'false',
+            'false',
+            'true', 
+            'false'
         ],
-        answers: 'choice 3'
+        answers: 'true'
     },
     {
         question: 'question3',
         choices: [
-            'choice 1',
-            'choice 2',
-            'choice 3', 
-            'choice 4'
+            'false',
+            'false',
+            'false', 
+            'true'
         ],
         answers: 'choice 4'
     },
@@ -61,7 +59,8 @@ function countdown() {
     timerEl.innerText = "Time Remaining: " + timeLeft
     if (timeLeft <= 0) {
         clearInterval(timerId)
-    }
+        endQuiz()
+    } 
 }
 
 // Starts here
@@ -75,6 +74,7 @@ beginButtonEl.addEventListener('click', function() {
     showNextQuestion(index)
 });
 
+// Function will show next question
 function showNextQuestion(index) {
     questionSection.innerHTML = ''
 
@@ -103,7 +103,7 @@ function showNextQuestion(index) {
     questionSection.appendChild(buttonFour)
 }
 
-// Needs to be updated to add grade to localStoarge
+// Checks answer and adds points/penalizes time
 function checkAnswer() {
     console.log(this.innerHTML)
     if (this.innerHTML === questionsLink[index].answers) {
@@ -121,6 +121,7 @@ function checkAnswer() {
     }
 }
 
+// Provides buttons for the end of the quiz.
 function endQuiz() {
     questionSection.style.display = 'none'
     var showEndQuiz = document.querySelector('.end-quiz');
@@ -134,6 +135,7 @@ function endQuiz() {
     document.getElementById('restart-button').addEventListener('click', restart)
 }
 
+// Adds grade/initials to localstorage.
 localStorageButton.addEventListener('click', function() {
     var saveInitials = document.getElementById('save-initials');
 
@@ -146,8 +148,12 @@ localStorageButton.addEventListener('click', function() {
     localStorage.setItem('form', JSON.stringify(highScoreArray))
     localStorageButton.style.display = 'none'
     saveInitials.value = ''
+    window.location.href = "./highscore.html";
+    
+
 })
 
+// Restarts the quiz
 function restart() {
     timeLeft = 20;
     index = 0; 
@@ -157,7 +163,6 @@ function restart() {
     document.querySelector('.end-quiz').style.display = 'none';
     beginButtonEl.classList.remove('hide')
 }
-
 
 
 

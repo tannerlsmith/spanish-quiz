@@ -2,13 +2,17 @@
     box-sizing: border-box;
   }
 
+html {
+    height: 100%;
+}
+
 body {
     background: #E0E0E0;
     color: var(--grey);
     margin: 0;
     padding: 0;
     display: flex;
-    min-height: 100vh;
+    height: 100%;
     flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1rem;
