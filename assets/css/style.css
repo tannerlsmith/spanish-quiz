@@ -98,3 +98,10 @@ hr {
 .end-quiz {
     display: none;
 }
+
+#hs-link {
+    text-decoration: none;
+    font-size: 1em;
+    border-style: 1px black;
+    text-decoration: underline;
+}

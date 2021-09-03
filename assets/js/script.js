@@ -18,34 +18,34 @@ if (localStorage.getItem('form') === null) {
 
 var questionsLink = [
     {
-        question: 'Question',
+        question: 'Para poder conducir legalmente, necesitas...',
         choices: [
-            'false', 
-            'true',
-            'false', 
-            'false'
+            'la gasolinera', 
+            'una licencia de conducir',
+            'el baúl', 
+            'carretera'
         ],
-        answers: 'true'
+        answers: 'una licencia de conducir'
     },
     {
-        question: 'question2',
+        question: 'Puedes poner las maletas en...',
         choices: [
-            'false',
-            'false',
-            'true', 
-            'false'
+            'el baúl',
+            'una licencia de conducir',
+            'la gasolinera', 
+            'carretera'
         ],
-        answers: 'true'
+        answers: 'el baúl'
     },
     {
-        question: 'question3',
+        question: 'Si tu carro no funciona, debes llevarlo al...',
         choices: [
-            'false',
-            'false',
-            'false', 
-            'true'
+            'la gasolinera',
+            'una licencia de conducir',
+            'el baúl', 
+            'taller mecánico'
         ],
-        answers: 'choice 4'
+        answers: 'taller mecánico'
     },
 ]
 
